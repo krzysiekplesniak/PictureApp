@@ -1,16 +1,16 @@
-import { createContext, useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { createContext, useState } from 'react'
+
 import { NEXT_URL } from '@/config/index'
 
-const PicturesStockContext = createContext()
+const ImagesContext = createContext()
 
-export const PicturesStockProvider = ({ children }) => {
+export const ImagesProvider = ({ children }) => {
 
   const [picturesInStock, setPicturesInStock] = useState(null);
   
  
   const addPicture = async (id) => {
-    
+
     setPicturesInStock(picturesInStock + 1);
 
     // funkcje dla pózniejszego dodania obługi żywego backednuStrapi
@@ -27,7 +27,7 @@ export const PicturesStockProvider = ({ children }) => {
 
     setPicturesStock(null);
 
-    // funkcje dla pózniejszego dodania obługi żywego backednuStrapi
+    // funkcje dla pózniejszego dodania obługi żywego backednu w Strapi
     // const res = await fetch(`${NEXT_URL}/api/checkout${id}`, {
     //   method: 'POST',
     // })
@@ -40,10 +40,10 @@ export const PicturesStockProvider = ({ children }) => {
   
 
   return (
-    <PicturesStockContext.Provider value={{ picturesInStock, addPicture, deletePicture }}>
+    <ImagesContext.Provider value={{ picturesInStock, addPicture, deletePicture }}>
       {children}
-    </PicturesStockContext.Provider>
+    </ImagesContext.Provider>
   )
 }
 
-export default PicturesStock;
+export default ImagesContext;

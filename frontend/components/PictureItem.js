@@ -1,10 +1,11 @@
-import Link from "next/link"
+
 import Image from 'next/image'
-import PicturesStockContext from '@/components/PicturesStockContext'
+import { useContext } from 'react'
+import ImagesContext from '@/context/ImagesContext'
 
 export default function PictureItem({picture}) {
     
-    const { addPicture } = useContext(PicturesStockContext)
+    const { addPicture } = useContext(ImagesContext)
 
 
     return (

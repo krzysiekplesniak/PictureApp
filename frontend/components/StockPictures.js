@@ -1,16 +1,15 @@
-import PicturesStockContext from '@/components/PicturesStockContext'
+import ImagesContext from '@/context/ImagesContext'
 
 export default function StockPictures() {
 
-    const { picturesInStock, deletePicture } = useContext(PicturesStockContext)
+    const { picturesInStock, deletePicture } = useContext(ImagesContext)
 
     return (
-        <div>
+        <>
             Current in stock-bucket there is/are {picturesInStock} of pictures!
-            map
 
-            <button onClick={() => deletePicture()}>Delete all?</button>
+            {/* <button onClick={() => deletePicture()}>Delete all?</button> */}
             
-        </div>
+        </>
     )
 }
