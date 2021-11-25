@@ -8,7 +8,7 @@ export default function StockPictures() {
         <>
             Current in stock-bucket there is/are {picturesInStock} of pictures!
 
-            {/* <button onClick={() => deletePicture()}>Delete all?</button> */}
+            <button onClick={() => deletePicture()}>Delete all?</button>
             
         </>
     )
