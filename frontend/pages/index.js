@@ -1,6 +1,6 @@
 
 import Link from "next/link"
-import Layout from "../componets/Layout"
+import Layout from "@/componets/Layout"
 
 export default function HomePage() {
   return (

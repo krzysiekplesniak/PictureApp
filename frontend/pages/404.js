@@ -1,6 +1,6 @@
 
 import  {FaExlamationTriangle} from "react-icons"
-import Layout from "../componets/Layout"
+import Layout from "@/componets/Layout"
 import Link from "next/link"
 
 export default function NotFoundpage() {
