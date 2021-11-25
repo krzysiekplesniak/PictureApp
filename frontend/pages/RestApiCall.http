@@ -1,1 +1,17 @@
 Get http://localhost:3000/api/pictures
+
+###
+pojedynczy request 
+Get http://localhost:1337/pictures?slug=rolki-w-praku
+
+
+###
+limit do 3
+Get http://localhost:1337/pictures?_limit=6
+
+
+###
+sortowanie
+Get http://localhost:1337/pictures?_sort=updated_at:ASC
+
+

@@ -26,10 +26,12 @@ export default function HomePage({ pictures }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({query : {sort='updated_at:DESC', limit=6 }}) {
 
 
-  const queryString = '?_limit=6&_start=0&_sort=updated_at:DESC';
+  const queryString = '?_limit=3&_start=0&_sort=updated_at:DESC';
+  
+
   const response = await fetch(`${API_URL}/pictures${queryString}`); 
   const pictures = await response.json();
 
