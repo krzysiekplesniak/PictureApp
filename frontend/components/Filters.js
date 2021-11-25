@@ -1,19 +1,18 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-export default function Search() {
+export default function Filters() {
     
   const [filters, setFilters] = useState({
-    date: '',
-    price: ''
+    date: true,
+    price: true
   })
 
   const router = useRouter()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    router.push(`/events/search?term=${term}`)
-    setFilters('')
+    router.push(`/pictures?_limit=3`)
   }
 
   return (
