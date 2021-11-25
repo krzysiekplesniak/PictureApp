@@ -11,7 +11,7 @@ export default function Filters() {
   const router = useRouter()
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     router.push(`/pictures?_limit=3`)
   }
 

@@ -10,7 +10,6 @@ export default function Sort() {
   const handleSubmit = (e) => {
     e.preventDefault()
     router.push(`/pictures/_sort=updated_at:${sort ? 'DESC' : 'ASC'}`);
-
   }
 
   return (
