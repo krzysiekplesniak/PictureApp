@@ -17,7 +17,7 @@ export default function Search() {
   }
 
   return (
-    <div className={styles.search}>
+    <div>
       <form onSubmit={handleSubmit}>
         <input
           type='checkbox'
@@ -36,5 +36,3 @@ export default function Search() {
     </div>
   )
 }
-© 2021 GitHub, Inc.
-Terms
