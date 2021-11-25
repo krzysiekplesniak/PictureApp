@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout"
+import PictureItem from "@/components/PicturePage";  
 import { API_URL } from "@/config/index"
 import Link from "next/link"
 
@@ -16,11 +17,8 @@ export default function HomePage({ pictures }) {
       {pictures.length === 0 && <h3>No pictures at all</h3>}
 
             
-      {pictures.map(p => (
-        <>
-          <p>{p.id}</p>
-          <p>{p.name}</p>
-        </>
+      {pictures.map(picture => (
+        <PictureItem key={picture.id} picture={picture} />      
       ))}
       
 
