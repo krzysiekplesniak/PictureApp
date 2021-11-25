@@ -1,8 +1,12 @@
+import Layout from "../componets/Layout"
+import Link from "next/link"
 
-export default function about() {
+export default function About() {
     return (
-        <div>
-            <h1>About</h1>
-        </div>
+        <Layout title="About | PictureApp">
+            <h1>About page</h1>
+            <Link href="/">back home</Link>
+
+        </Layout>
     )
 }
