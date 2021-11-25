@@ -27,6 +27,6 @@ export default function Layout({title, keyword, description, children}) {
 
 Layout.defaultProps = {
     title: "Pictures shop | Find coolest pics on the world",
-    description: "Find teh latest fun pict",
-    keyword: "PIctures, stock, image"
+    description: "Find the latest fun pic",
+    keyword: "Pictures, stock, image"
 }

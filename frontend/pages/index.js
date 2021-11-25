@@ -6,10 +6,10 @@ import Link from "next/link"
 
 export default function HomePage({ pictures }) {
   
-  console.log('FRONT', pictures);
+  //console.log('FRONT', pictures);
 
   return (
-   
+    
     <Layout title="Home page | PictureApp">
 
       <h1>All Pictures</h1>
@@ -28,7 +28,9 @@ export default function HomePage({ pictures }) {
 
 export async function getServerSideProps() {
 
-  const response = await fetch(`${API_URL}/api/pictures`); 
+
+  const queryString = '?_limit=6&_start=0&_sort=updated_at:DESC';
+  const response = await fetch(`${API_URL}/pictures${queryString}`); 
   const pictures = await response.json();
 
   //console.log('BACK',pictures);
