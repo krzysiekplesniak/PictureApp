@@ -2,6 +2,7 @@
 import Head from "next/head" 
 import Header from "./Header"
 import Footer from "./Footer"
+import ShowPictureDay from "./ShowPictureDay"
 
 export default function Layout({title, keyword, description, children}) {
     return (
@@ -13,6 +14,8 @@ export default function Layout({title, keyword, description, children}) {
             </Head>
 
             <Header />
+
+            <ShowPictureDay />
 
             <h1>Layout</h1>
             {children}

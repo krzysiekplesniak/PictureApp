@@ -1,0 +1,17 @@
+{
+    "pictures" : [
+        {
+            "id": 1,
+            "name": "Kot"
+        },
+        {
+            "id": 2,
+            "name": "Pies"
+        },
+        {
+            "id": 3,
+            "name": "Robak"
+        }
+    ]
+    
+}

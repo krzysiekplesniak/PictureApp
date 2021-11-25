@@ -4,6 +4,17 @@
         "paths": {
           "@/components/*": ["components/*"],
           "@/styles/*": ["styles/*"],
+          "@/config/*": ["config/*"],
         }
-    }
+    },
+    "exclude": [
+      "dist",
+      "node_modules",
+      "build",
+      ".vscode",
+      ".next",
+      "coverage",
+      ".npm",
+      ".yarn"
+  ],
 }

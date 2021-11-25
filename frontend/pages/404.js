@@ -7,7 +7,7 @@ const NotFoundpage = () => {
     return (
         <Layout title="Page not found | PicturesAPP">
             <h1>
-                //<FaExlamationTriangle />
+                {/* <FaExlamationTriangle /> */}
                 404 Not found this page</h1>
             <p>Sorry, nothing found there</p>
             <Link href="/">Go back home </Link>
