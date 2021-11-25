@@ -1,6 +1,9 @@
 import Link from "next/link"
+import ImagesContext from '@/context/ImagesContext'
+import NumberPictures from '@/components/NumberPictures'
 
 export default function Header() {
+    
     return (
         <header>
             <div>Header</div>
@@ -13,10 +16,13 @@ export default function Header() {
               <ul>
                   <li>
                     <Link href="/pictures">
-                    <a>
-                        Pictures page
+                        <a>
+                            Pictures page
                         </a>        
                     </Link>     
+                  </li>
+                  <li>
+                    <NumberPictures />
                   </li>
               </ul>
           </nav>

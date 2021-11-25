@@ -18,7 +18,7 @@ export default function Sort() {
         <input
           type='checkbox'
           value={sort ? 'ascending' : 'descending'}
-          onChange={(e) => setFilters(e.target.value)}
+          onChange={(e) => setSort(e.target.value)}
           placeholder={sort ? 'ascending' : 'descending'}
         />
       </form>
