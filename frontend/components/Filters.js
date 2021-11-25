@@ -15,22 +15,47 @@ export default function Filters() {
     router.push(`/pictures?_limit=3`)
   }
 
+  const filterPrice = (e) => {
+    setFilters(e.target.value)
+    console.log('filter Price')
+  }
+
+  const filterDate = (e) => {
+    setFilters(e.target.value);
+    console.log('filter Date')
+  }
+  
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input
           type='checkbox'
           value={filters.date}
-          onChange={(e) => setFilters(e.target.value)}
-          placeholder='Date'
+          onChange={filterPrice}
+          name='Date'
         />
+        <label htmlFor="Date">Date</label> 
         <input
           type='checkbox'
           value={filters.price}
-          onChange={(e) => setFilters(e.target.value)}
-          placeholder='Price'
+          onChange={filterDate}
+          name='Price'
         />
-        
+        <label htmlFor="Price">Price</label> 
+        <input
+          type='checkbox'
+          value={filters.price}
+          onChange={filterDate}
+          name='People'
+        />
+        <label htmlFor="People">People</label> 
+        <input
+          type='checkbox'
+          value={filters.price}
+          onChange={filterDate}
+          name="Premium"
+        />
+        <label htmlFor="Premium">Premium</label> 
       </form>
     </div>
   )

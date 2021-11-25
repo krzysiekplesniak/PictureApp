@@ -3,9 +3,12 @@ import Head from "next/head"
 import Header from "./Header"
 import Footer from "./Footer"
 import ShowPictureDay from "./ShowPictureDay"
-
+import { useRouter } from "next/router"
 
 export default function Layout({title, keyword, description, children}) {
+    
+    const router = useRouter;
+
     return (
         <div>
             <Head>
@@ -16,9 +19,7 @@ export default function Layout({title, keyword, description, children}) {
 
             <Header />
  
-            <ShowPictureDay />
-
-            <h1>Layout</h1>
+            {router.pathname === null ? <ShowPictureDay /> : <span>{router.pathname}</span>}
 
             <div>
                 {children}

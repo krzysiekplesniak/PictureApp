@@ -3,11 +3,8 @@ import PictureItem from "@/components/PictureItem";
 import Filters from "@/components/Filters"
 import { API_URL } from "@/config/index"
 
-
-
 export default function HomePage({ pictures }) {
-  
-  
+    
   return (
     
     <Layout title="Home page | PictureApp">
@@ -16,12 +13,20 @@ export default function HomePage({ pictures }) {
 
       {pictures.length === 0 && <h3>No pictures at all</h3>}
 
-      <Filters />
+      <div>
+          <Filters />
+      </div>
 
-      {pictures.map(picture => (
-        <PictureItem key={picture.id} picture={picture} />      
-      ))}
-      
+      <div>
+          {
+            pictures.map(picture => (
+              <PictureItem
+                key={picture.id} 
+                picture={picture}
+              />      
+            ))
+          }
+      </div>  
 
     </Layout>
   )

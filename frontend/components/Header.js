@@ -1,23 +1,23 @@
 import Link from "next/link"
-import ImagesContext from '@/context/ImagesContext'
 import NumberPictures from '@/components/NumberPictures'
 
 export default function Header() {
     
     return (
         <header>
-            <div>Header</div>
-          <Link href="/">
-            <a>
-                Go home
-              </a> 
-          </Link>
+          <div>
+            <Link href="/">
+                <a>
+                    Bejamas
+                </a> 
+            </Link>
+          </div>
           <nav>
               <ul>
                   <li>
                     <Link href="/pictures">
                         <a>
-                            Pictures page
+                            Your checkout
                         </a>        
                     </Link>     
                   </li>
