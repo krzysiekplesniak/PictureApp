@@ -1,8 +1,8 @@
 
+import Layout from "@/components/Layout"
 import Link from "next/link"
-import Layout from "@/componets/Layout"
 
-export default function HomePage() {
+const HomePage = () => {
   return (
    
     <Layout title="Home page | PictureApp">
@@ -12,3 +12,5 @@ export default function HomePage() {
     </Layout>
   )
 }
+
+export default HomePage; 

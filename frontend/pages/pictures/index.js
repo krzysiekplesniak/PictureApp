@@ -1,9 +1,11 @@
-import Layout from "@/componets/Layout"
+import Layout from "@/components/Layout"
 
-export default function PicturesPage() {
+const PicturesPage = () => {
     return (
         <Layout titel="Pictures Page | PicturesApp">
             <h1>Pictures Page</h1>
         </Layout>
     )
 }
+
+export default PicturesPage;
