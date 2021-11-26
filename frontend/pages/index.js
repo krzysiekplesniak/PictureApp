@@ -51,7 +51,7 @@ export async function getServerSideProps({query : {sort='updated_at:DESC', limit
   
    const featuredArtwork = picturesAll.filter(pic => pic.featuredartwork === true)
 
-   console.log('BACK', featuredArtwork)
+   console.log('B A C K', featuredArtwork)
   
   return {
     props: { 
