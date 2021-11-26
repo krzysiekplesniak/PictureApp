@@ -50,6 +50,9 @@
     },
     "price": {
       "type": "biginteger"
+    },
+    "featuredartwork": {
+      "type": "boolean"
     }
   }
 }
