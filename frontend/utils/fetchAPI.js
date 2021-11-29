@@ -6,3 +6,12 @@ export async function fetchAPI(path){
     return data;
 
 }
+
+
+export async function Filter(picturesAll, number) {
+
+    const featuredArtwork = await picturesAll.find(pic => pic === number)
+
+    return featuredArtwork
+
+}
