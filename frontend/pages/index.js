@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout"
 import PictureItem from "@/components/PictureItem";  
 import Filters from "@/components/Filters"
+import Sort from "@/components/Sort"
 import ShowPictureDay from "@/components/ShowPictureDay"
 import { fetchAPI, Filter } from "@/utils/fetchAPI"
 import { API_URL } from "@/config/index"
@@ -17,6 +18,7 @@ export default function HomePage({ pictures , featuredArtwork }) {
       {/* //FIXME: OSTYLOWAĆ PÓZNIEJ I DLATEGO JEST TAKI PUSTY DIV */}
       <div>
           <Filters />
+          <Sort />
       </div>
 
       {pictures && pictures.length === 0

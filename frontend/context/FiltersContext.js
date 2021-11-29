@@ -15,7 +15,18 @@ export const FiltersProvider = ({ children }) => {
     food: false
   });
    
-  
+  const [sorting, setSorting] = useState('ASC');
+
+
+  const changeSorting = () => {
+    
+    if (sorting ==='ASC') 
+      setSorting('DESC')
+    else
+      setSorting('ASC');
+
+    console.log(sorting);  
+  }
 
   const changeFilters = (filter) => {
 
@@ -32,7 +43,7 @@ export const FiltersProvider = ({ children }) => {
     if (filters.nature === true) {query ? query +="&nature=true" : query +="nature=true"};
     if (filters.city === true) {query ? query +="&city=true" : query +="city=true"}; 
     if (filters.food === true) {query ? query +="&food=true" : query +="food=true"}; 
-    //if (filters.sort === true) {query +="&sort=updated_at:DESC"} else {query +="&sort=updated_at:ASC"};
+    if (sorting === 'DESC') {query +="&sort=updated_at:DESC"} else {query +="&sort=updated_at:ASC"};
     
     // console.log('filtr => ', filters);
     // console.log('query => ', query);
@@ -56,7 +67,7 @@ export const FiltersProvider = ({ children }) => {
  
 
   return (
-    <FiltersContext.Provider value={{ filters, changeFilters, clearAllFilters}}>
+    <FiltersContext.Provider value={{ filters, changeFilters, clearAllFilters, sorting, changeSorting}}>
       {children}
     </FiltersContext.Provider>
   )

@@ -1,27 +1,23 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { useContext } from 'react'
+import FiltersContext from '@/context/FiltersContext'
 
-export default function Sort() {
+const Sort = () => {
     
-  const [sort, setSort] = useState(true);
-
+  const { sorting, changeSorting } = useContext(FiltersContext)
   const router = useRouter()
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    router.push(`/pictures/_sort=updated_at:${sort ? 'DESC' : 'ASC'}`);
-  }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
         <input
           type='checkbox'
-          value={sort ? 'ascending' : 'descending'}
-          onChange={(e) => setSort(e.target.value)}
-          placeholder={sort ? 'ascending' : 'descending'}
+          onChange={changeSorting}
+          name='sort'
         />
-      </form>
+        <label htmlFor="">Sort {sorting === 'ASC' ? 'ASC' : 'DESC'}</label> 
     </div>
   )
 }
+
+export default Sort;
