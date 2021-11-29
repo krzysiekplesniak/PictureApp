@@ -1,10 +1,13 @@
 import { ImagesProvider } from '@/context/ImagesContext';
+import { FiltersProvider } from '@/context/FiltersContext';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
     <ImagesProvider>
-      <Component {...pageProps} /> 
+      <FiltersProvider>
+        <Component {...pageProps} /> 
+      </FiltersProvider>
     </ImagesProvider>
   )
     

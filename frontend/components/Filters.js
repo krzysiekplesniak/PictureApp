@@ -1,62 +1,63 @@
 import { useState } from 'react'
-import { useRouter } from 'next/router'
+import { useContext } from 'react'
+import FiltersContext from '@/context/FiltersContext'
 
 export default function Filters() {
-    
-  const [filters, setFilters] = useState({
-    date: true,
-    price: true
-  })
 
-  const router = useRouter()
-
-  const handleSubmit = (e) => {
+  const { filters, changeFilters, clearAllFilters } = useContext(FiltersContext)
+  
+  const handleClearFilters = (e) => {
     e.preventDefault();
-    router.push(`/pictures?_limit=3`)
+    clearAllFilters();
   }
 
-  const filterPrice = (e) => {
-    setFilters(e.target.value)
-    console.log('filter Price')
-  }
-
-  const filterDate = (e) => {
-    setFilters(e.target.value);
-    console.log('filter Date')
+  const filterChange = (e) => {
+    changeFilters(e.target.name);
   }
   
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type='checkbox'
-          value={filters.date}
-          onChange={filterPrice}
-          name='Date'
-        />
-        <label htmlFor="Date">Date</label> 
-        <input
-          type='checkbox'
-          value={filters.price}
-          onChange={filterDate}
-          name='Price'
-        />
-        <label htmlFor="Price">Price</label> 
-        <input
-          type='checkbox'
-          value={filters.price}
-          onChange={filterDate}
-          name='People'
-        />
-        <label htmlFor="People">People</label> 
-        <input
-          type='checkbox'
-          value={filters.price}
-          onChange={filterDate}
-          name="Premium"
-        />
-        <label htmlFor="Premium">Premium</label> 
+    <>
+      <form onSubmit={handleClearFilters}>
+        <div>
+          <input
+            type='checkbox'
+            value={filters.people}
+            onChange={filterChange}
+            name='people'
+          />
+          <label htmlFor="people">People</label> 
+        </div> 
+
+        <div>
+          <input
+            type='checkbox'
+            value={filters.nature}
+            onChange={filterChange}
+            name='nature'
+          />
+          <label htmlFor="nature">Nature</label> 
+        </div>
+        
+        <div>
+          <input
+            type='checkbox'
+            value={filters.city}
+            onChange={filterChange}
+            name='city'
+          />
+          <label htmlFor="city">City</label> 
+        </div>
+        
+        <div>
+          <input
+            type='checkbox'
+            value={filters.food}
+            onChange={filterChange}
+            name="food"
+          />
+          <label htmlFor="food">Food</label> 
+        </div>
       </form>
-    </div>
+    </>
   )
 }

@@ -43,53 +43,28 @@ export default function HomePage({ pictures , featuredArtwork }) {
 
 
 
-export async function getServerSideProps({query : {filter = null, sort = 'ASC', limit=6 }}) {
-
-  // function filtersQuery(filter) {
-
-  //   switch(filter) {
-  //     case 'city':
-  //       query.concat("&_city=true");;
-  //       break;
-  //     case "nature":
-  //       query.concat("&_nature=true");
-  //       break;
-  //     case "people":
-  //       query.concat("&_people=true"); 
-  //       break;
-  //     case "food":
-  //       query.concat("&_=true"); 
-  //        break;
-  //     default:
-  //       query = '';
-  //   }
-  //   return query;
-  // }
-  
-  // let query = filter.split('_');
-  // let queryString = '?';
-  
+export async function getServerSideProps({query : {people, nature, city, food}}) {
    
-    
-  // const filters = query.map(filter => filtersQuery(filter))
- 
-
-  // queryString.concat()
+    let queryString = `?_limit=6`;
+    let query2 = '';
   
-   const queryString = '?_limit=6&_start=0&_sort=updated_at:DESC';
+    if (people) {query2 +="people=true"}; 
+    if (nature) {query2 ? query2 +="&nature=true" : query2 +="nature=true"};
+    if (city) {query2 ? query2 +="&city=true" : query2 +="city=true"}; 
+    if (food) {query2 ? query2 +="&food=true" : query2 +="food=true"}; 
+        
+    if (query2) {
+        console.log('111', `${queryString}&${query2}`); 
+        queryString += `&${query2}`;
+    } else {
+        console.log('222', `${queryString}`);
+    }
 
    const [picturesFiletred, picturesdfeaturedArtwork] = await Promise.all([
       fetchAPI(`${API_URL}/pictures${queryString}`),
       fetchAPI(`${API_URL}/pictures?featuredartwork=true`),
    ]);
 
-  //  let picturesAll = [1,2,3]
-   
-  //  const featuredArtwork = await Filter(picturesAll, 3)
-   
-  //  console.log('BACK', featuredArtwork)
-
-    
   
   return {
     props: { 

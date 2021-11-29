@@ -59,16 +59,20 @@
       "model": "filters"
     },
     "nature": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
-    "person": {
-      "type": "boolean"
+    "people": {
+      "type": "boolean",
+      "default": false
     },
     "city": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "food": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   }
 }
