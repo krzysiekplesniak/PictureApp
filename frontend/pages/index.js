@@ -13,7 +13,8 @@ export default function HomePage({ pictures , featuredArtwork }) {
     <Layout title="Home page | PictureApp">
 
       <h1>All Pictures</h1>
-
+      
+      {/* //FIXME: OSTYLOWAĆ PÓZNIEJ I DLATEGO JEST TAKI PUSTY DIV */}
       <div>
           <Filters />
       </div>
@@ -21,34 +22,61 @@ export default function HomePage({ pictures , featuredArtwork }) {
       {pictures && pictures.length === 0
         ? <h3>No pictures at all</h3>
         : <div>
-           Zzzzzzzzzzzzzzzzzzzzzz 
+
+            <ShowPictureDay featuredArtwork={featuredArtwork}/>
+
+            TODO: wydzielić do osobnego komponnetu
+            <div>
+                {
+                  pictures.map(picture => (
+                    <PictureItem
+                      key={picture.id} 
+                      picture={picture}
+                    />      
+                  ))
+                }
+            </div>   
          </div>}
-        
-        <ShowPictureDay featuredArtwork={featuredArtwork}/>
-
-
-        // TODO wydzielić do osobnego komponnetu   
-        <div>
-            {
-              pictures.map(picture => (
-                <PictureItem
-                  key={picture.id} 
-                  picture={picture}
-                />      
-              ))
-            }
-        </div>
     </Layout>
   )
 }
 
 
 
-export async function getServerSideProps({query : {sort='updated_at:DESC', limit=6 }}) {
+export async function getServerSideProps({query : {filter = null, sort = 'ASC', limit=6 }}) {
 
+  // function filtersQuery(filter) {
+
+  //   switch(filter) {
+  //     case 'city':
+  //       query.concat("&_city=true");;
+  //       break;
+  //     case "nature":
+  //       query.concat("&_nature=true");
+  //       break;
+  //     case "people":
+  //       query.concat("&_people=true"); 
+  //       break;
+  //     case "food":
+  //       query.concat("&_=true"); 
+  //        break;
+  //     default:
+  //       query = '';
+  //   }
+  //   return query;
+  // }
   
-  const queryString = '?_limit=6&_start=0&_sort=updated_at:DESC';
+  // let query = filter.split('_');
+  // let queryString = '?';
   
+   
+    
+  // const filters = query.map(filter => filtersQuery(filter))
+ 
+
+  // queryString.concat()
+  
+   const queryString = '?_limit=6&_start=0&_sort=updated_at:DESC';
 
    const [picturesFiletred, picturesdfeaturedArtwork] = await Promise.all([
       fetchAPI(`${API_URL}/pictures${queryString}`),

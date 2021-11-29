@@ -18,7 +18,7 @@ export default function Layout({title, keyword, description, children}) {
             </Head>
 
             <Header />
- 
+            
             {router.pathname === null ? <ShowPictureDay /> : <span>{router.pathname}</span>}
 
             <div>

@@ -5,12 +5,13 @@ import ImagesContext from '@/context/ImagesContext'
 
 export default function ShowPictureDay({ featuredArtwork = null, pictures = null }) {
 
-    const { addPicture } = useContext(ImagesContext)
+// FIXME: zmienić domyślne wartości z null po użyciu TS
+
+const { addPicture } = useContext(ImagesContext)
 
     return (
         <div>
-            {/* {console.log('featuredArtwork', featuredArtwork)}  */}
-
+            
             <h1>Picture of the day</h1>
             <div>
                 <p>{featuredArtwork.name}</p>
@@ -18,7 +19,7 @@ export default function ShowPictureDay({ featuredArtwork = null, pictures = null
 
                 <button onClick={() => addPicture(featuredArtwork.id)}>DODAJ</button>
 
-                <Image src={featuredArtwork.image ? featuredArtwork.image.formats.thumbnail.url : `/images/pexel.jpeg`} width='500' height="500" />
+                <Image src={featuredArtwork.image ? featuredArtwork.image.formats.thumbnail.url : `/images/pexel.jpeg`} width='750' height="500" />
             </div>
         </div>
     )

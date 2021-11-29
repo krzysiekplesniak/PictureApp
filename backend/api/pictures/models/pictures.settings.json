@@ -53,6 +53,22 @@
     },
     "featuredartwork": {
       "type": "boolean"
+    },
+    "filter": {
+      "via": "pictures",
+      "model": "filters"
+    },
+    "nature": {
+      "type": "boolean"
+    },
+    "person": {
+      "type": "boolean"
+    },
+    "city": {
+      "type": "boolean"
+    },
+    "food": {
+      "type": "boolean"
     }
   }
 }

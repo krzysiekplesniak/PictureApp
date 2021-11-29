@@ -13,7 +13,7 @@ export default function PictureItem({picture}) {
             <p>{picture.description}</p>
             <div>
                 <button onClick={() => addPicture(picture.id)}>DODAJ</button>
-                <Image src={picture.image ? picture.image.formats.medium.url : `/images/pexel.jpeg`} width='250' height="200" />
+                <Image src={picture.image ? picture.image.formats.thumbnail.url : `/images/pexel.jpeg`} width='250' height="200" />
             </div>
         </div>
     )

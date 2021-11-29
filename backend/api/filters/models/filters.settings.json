@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "filters",
+  "info": {
+    "name": "Filters",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "filter": {
+      "type": "json"
+    },
+    "pictures": {
+      "via": "filter",
+      "collection": "pictures"
+    }
+  }
+}
