@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
-import ShowPictureDay from "./FeaturedArtwork";
+import ShowPictureDay from "../Pictures/PictureOfDay";
 import { useRouter } from "next/router";
 
 const Layout = ({ title, keyword, description, children }) => {
