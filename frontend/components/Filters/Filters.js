@@ -19,7 +19,7 @@ const Filters = () => {
 	};
 
 	return (
-		<section>
+		<section className='container'>
 			<form>
 				<button onClick={handleClearFilters}>Clear filters</button>
 				<br />

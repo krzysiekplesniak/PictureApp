@@ -17,11 +17,12 @@ const Layout = ({ title, keyword, description, children }) => {
 
 			<Header />
 
-			{router.pathname === null ? <ShowPictureDay /> : <span>{router.pathname}</span>}
+			<main className="container">
+				{/* all content tutaj jest */}
+				{children}
+			</main>
 
-			<div>{children}</div>
-
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 };

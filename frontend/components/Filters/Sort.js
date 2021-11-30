@@ -13,7 +13,7 @@ const Sort = () => {
 	};
 
 	return (
-		<section>
+		<section className='container'>
 			<FilterItem name='sort' value={sort} filterChange={sortChange} />
 		</section>
 	);

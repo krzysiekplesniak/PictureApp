@@ -25,9 +25,9 @@ export default function HomePage({ pictures, featuredArtwork }) {
 						</div>
 						<div className={styles.pictures__6pack}>
 							<Pictures pictures={pictures} />
-							<div className={styles.pictures__pagination}>
-								<Pagination />
-							</div>
+						</div>
+						<div className={styles.pictures__pagination}>
+							<Pagination />
 						</div>
 					</div>
 				</div>
