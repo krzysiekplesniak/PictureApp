@@ -4,16 +4,16 @@ import FilterItem from './FilterItem'
 
 const Sort = () => {
   
-  const { filters, changeFilters } = useContext(FiltersContext)
+  const { filters: {sort}, changeFilters } = useContext(FiltersContext)
 
   const sortChange = (e) => {
     changeFilters(e.target.name);
   }
 
   return (
-    <>
-       <FilterItem name='sort' filterChange={sortChange} />
-    </>
+    <section>
+       <FilterItem name='sort' value={sort} filterChange={sortChange} />
+    </section>
   )
 }
 

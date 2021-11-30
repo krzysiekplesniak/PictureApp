@@ -2,7 +2,7 @@ import Layout from "@/components/Containers/Layout"
 import PictureItem from "@/components/Pictures/PictureItem";  
 import Filters from "@/components/Filters/Filters"
 import Sort from "@/components/Filters/Sort"
-import ShowPictureDay from "@/components/Containers/FeaturedArtwork"
+import FeaturedArtwork from "@/components/Containers/FeaturedArtwork"
 import { fetchAPI, Filter } from "@/utils/fetchAPI"
 import { API_URL } from "@/config/index"
 
@@ -16,36 +16,38 @@ export default function HomePage({ pictures , featuredArtwork }) {
       <h1>All Pictures</h1>
       
       {/* //FIXME: OSTYLOWAĆ PÓZNIEJ I DLATEGO JEST TAKI PUSTY DIV */}
-      <div>
+      <aside>
           <Filters />
           <Sort />
-      </div>
+      </aside>
+      
+      {
+        pictures && pictures.length === 0
+          ? <h3>No pictures at all</h3>
+          : <main>
+              <FeaturedArtwork featuredArtwork={featuredArtwork}/>
 
-      {pictures && pictures.length === 0
-        ? <h3>No pictures at all</h3>
-        : <div>
-
-            <ShowPictureDay featuredArtwork={featuredArtwork}/>
-
-            TODO: wydzielić do osobnego komponnetu
-            <div>
-                {
-                  pictures.map(picture => (
-                    <PictureItem
-                      key={picture.id} 
-                      picture={picture}
-                    />      
-                  ))
-                }
-            </div>   
-         </div>}
+              TODO: wydzielić do osobnego komponnetu
+              <section>
+                    {
+                      pictures.map(picture => (
+                        <PictureItem
+                          key={picture.id} 
+                          picture={picture}
+                        />      
+                      ))
+                    }
+              </section>   
+            </main>
+      }
+      
     </Layout>
   )
 }
 
 
 
-export async function getServerSideProps({query : {people, nature, city, food, sorting}}) {
+export async function getServerSideProps({query : {people, nature, city, food, sort}}) {
    
     let queryString = '?_limit=6';
     let filters = '';
@@ -57,7 +59,7 @@ export async function getServerSideProps({query : {people, nature, city, food, s
     
     if (filters) queryString += `&${filters}`;
 
-    if (sorting) {queryString +="&_sort=date:ASC"} else {queryString +="&_sort=date:DESC"};
+    if (sort) {queryString +="&_sort=date:ASC"} else {queryString +="&_sort=date:DESC"};
     
 
    const [picturesFiletred, picturesdfeaturedArtwork] = await Promise.all([

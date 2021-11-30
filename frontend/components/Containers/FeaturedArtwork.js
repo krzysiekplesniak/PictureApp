@@ -3,15 +3,14 @@ import { useContext } from 'react'
 import ImagesContext from '@/context/ImagesContext'
 
 
-export default function ShowPictureDay({ featuredArtwork = null, pictures = null }) {
+const FeaturedArtwork = ({ featuredArtwork = null, pictures = null }) => {
 
 // FIXME: zmienić domyślne wartości z null po użyciu TS
 
 const { addPicture } = useContext(ImagesContext)
 
     return (
-        <div>
-            
+        <section>
             <h1>Picture of the day</h1>
             <div>
                 <p>{featuredArtwork.name}</p>
@@ -21,7 +20,9 @@ const { addPicture } = useContext(ImagesContext)
 
                 <Image src={featuredArtwork.image ? featuredArtwork.image.formats.thumbnail.url : `/images/pexel.jpeg`} width='750' height="500" />
             </div>
-        </div>
+        </section>
     )
 }
+
+export default FeaturedArtwork;
 

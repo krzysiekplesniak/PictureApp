@@ -5,7 +5,7 @@ import Footer from "./Footer"
 import ShowPictureDay from "./FeaturedArtwork"
 import { useRouter } from "next/router"
 
-export default function Layout({title, keyword, description, children}) {
+const Layout = ({title, keyword, description, children}) => {
     
     const router = useRouter;
 
@@ -36,3 +36,5 @@ Layout.defaultProps = {
     description: "Find the latest fun pic",
     keyword: "Pictures, stock, image"
 }
+
+export default Layout;

@@ -27,7 +27,7 @@ export const FiltersProvider = ({ children }) => {
     if (nature) (query ? query +="&nature=true" : query +="nature=true");
     if (city) (query ? query +="&city=true" : query +="city=true"); 
     if (food) (query ? query +="&food=true" : query +="food=true"); 
-    if (sort) (query ? query +="&sorting=true" : query +="sorting=true");
+    if (sort) (query ? query +="&sort=true" : query +="sort=true");
          
     if (query.length > 1) {router.push(`${query}`)} else {router.push('/')};
 
@@ -40,7 +40,7 @@ export const FiltersProvider = ({ children }) => {
     
 
   const clearAllFilters = () => {
-
+  console.log('filters',filters);
     setFilters({
       people: false,
       nature: false,

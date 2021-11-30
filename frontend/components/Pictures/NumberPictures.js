@@ -2,7 +2,7 @@
 import ImagesContext from '@/context/ImagesContext'
 import { useContext } from 'react'
 
-export default function NumberPictures() {
+const NumberPictures = () => {
 
     const { picturesInStock, deletePicture } = useContext(ImagesContext)
 
@@ -13,3 +13,5 @@ export default function NumberPictures() {
         </>
     )
 }
+
+export default NumberPictures;

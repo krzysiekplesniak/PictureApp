@@ -1,7 +1,7 @@
 import Link from "next/link"
 import NumberPictures from '@/components/Pictures/NumberPictures'
 
-export default function Header() {
+const Header = () => {
     
     return (
         <header>
@@ -29,3 +29,5 @@ export default function Header() {
         </header>
     )
 }
+
+export default Header;
