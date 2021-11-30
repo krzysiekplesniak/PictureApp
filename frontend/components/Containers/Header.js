@@ -1,26 +1,21 @@
 import Link from "next/link";
-import NumberPictures from "@/components/Pictures/NumberPictures";
 import styles from "@/styles/Header.module.css";
+import ShopingCart from "@/components/ShopingCart/ShopingCart";
 
 const Header = () => {
+
 	return (
 		<header className={styles.header}>
-			<div>
-				<Link href='/'>
-					<a>Bejamas</a>
+			<div className={styles.logo}>
+				<Link href='https://bejamas.io'>
+					<a>
+						<img src='assets/bejamas-logo.png' alt='Bejamas logo' />
+						<span className={styles.globals}>Bejamas logo</span>
+					</a>
 				</Link>
 			</div>
 			<nav>
-				<ul>
-					<li>
-						<Link href='/pictures'>
-							<a>Your checkout</a>
-						</Link>
-					</li>
-					<li>
-						<NumberPictures />
-					</li>
-				</ul>
+				<ShopingCart />
 			</nav>
 		</header>
 	);

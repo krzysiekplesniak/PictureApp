@@ -1,0 +1,25 @@
+.shoping__cart {
+	height: 70px;
+	width: 150px;
+	position: absolute;
+	right: 37px;
+	top: 37px;
+	border-radius: 1px solid red;
+}
+
+.shoping__icon {
+	height: 54px;
+	width: 54px;
+	position: absolute;
+	right: 37px;
+	top: 37px;
+	padding: 4px;
+	border-radius: 1px solid red;
+}
+
+.shoping__items {
+	position: absolute;
+	right: 37px;
+	top: 37px;
+	border-radius: 1px solid red;
+}
