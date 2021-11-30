@@ -2,7 +2,7 @@ import Layout from "@/components/Containers/Layout";
 import Filters from "@/components/Filters/Filters";
 import Sort from "@/components/Filters/Sort";
 import PictureOfDay from "@/components/Pictures/PictureOfDay";
-import Pictures from "@/components/Pictures/Pictures"
+import Pictures from "@/components/Pictures/Pictures";
 import { fetchAPI, Filter } from "@/utils/fetchAPI";
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Home.module.css";

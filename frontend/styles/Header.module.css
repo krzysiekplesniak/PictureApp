@@ -5,9 +5,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-  /* border: 2px solid red; */
-  /* flex-direction: column; */
-  /* flex: 1; */
 }
 
 .logo {
@@ -16,14 +13,9 @@
 	color: #000000;
 	font-size: 20px;
 	text-transform: uppercase;
-  
 }
 
-.shoping {
-  /* border: 2px solid red; */
-}
-
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
 	.header {
 		flex-direction: column;
 		height: auto;
@@ -42,4 +34,4 @@
 	.logo {
 		margin: 20px 0;
 	}
-} */
+}

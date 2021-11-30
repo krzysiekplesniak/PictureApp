@@ -6,7 +6,9 @@
           "@/styles/*": ["styles/*"],
           "@/config/*": ["config/*"],
           "@/context*": ["context/*"],
+          "@/utils*":   ["utils/*"],
           "@/public/logo*": ["public/logo*"],
+
         }
     },
     "exclude": [

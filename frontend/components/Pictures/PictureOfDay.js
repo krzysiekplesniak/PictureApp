@@ -1,15 +1,17 @@
 import Image from "next/image";
 import { useContext } from "react";
 import ImagesContext from "@/context/ImagesContext";
+import { API_URL } from "@/config/index";
+import { fetchAPI } from "@/utils/fetchAPI";
 import styles from "@/styles/PictureOfDay.module.css";
 
-const PictureOfDay = ({ featuredArtwork = null, pictures = null }) => {
+export default function PictureOfDay({ featuredArtwork}) {
 	// FIXME: zmienić domyślne wartości z null po użyciu TS
 
 	const { addPicture } = useContext(ImagesContext);
 
 	return (
-		<section className='.container'>
+		<section className='container'>
 			<h1>Picture of the day</h1>
 			<div>
 				<p>{featuredArtwork.name}</p>
@@ -28,4 +30,5 @@ const PictureOfDay = ({ featuredArtwork = null, pictures = null }) => {
 	);
 };
 
-export default PictureOfDay;
+
+

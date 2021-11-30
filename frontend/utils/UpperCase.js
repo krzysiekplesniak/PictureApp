@@ -1,12 +1,10 @@
+const upperCase = stringToConvert => {
+	const firstChart = stringToConvert.slice(0, 1).toUpperCase();
+	const restOfString = stringToConvert.slice(1, stringToConvert.length);
 
-const UpperCase = (stringToConvert) => {
-    
-    const firstChart = stringToConvert.slice(0,1).toUpperCase();
-    const restOfString = stringToConvert.slice(1,stringToConvert.length);
-    
-    if (!stringToConvert.length && !firstChart.length && !restOfString.length) return null;
+	if (!stringToConvert.length && !firstChart.length && !restOfString.length) return null;
 
-    return `${firstChart}${restOfString}`;
-}
+	return `${firstChart}${restOfString}`;
+};
 
-export default UpperCase;
+export default upperCase;
