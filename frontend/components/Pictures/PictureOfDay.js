@@ -3,7 +3,7 @@ import { useContext } from "react";
 import ImagesContext from "@/context/ImagesContext";
 import { API_URL } from "@/config/index";
 import { fetchAPI } from "@/utils/fetchAPI";
-import styles from "@/styles/PictureOfDay.module.css";
+import styles from "@/styles/PictureOfDay.module.scss";
 
 export default function PictureOfDay({ featuredArtwork}) {
 	// FIXME: zmienić domyślne wartości z null po użyciu TS

@@ -1,6 +1,6 @@
 import { ImagesProvider } from "@/context/ImagesContext";
 import { FiltersProvider } from "@/context/FiltersContext";
-import "../styles/globals.css";
+import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
 	return (

@@ -1,0 +1,28 @@
+.shopingcart {
+	height: 70px;
+	width: 150px;
+	display: flex;
+	flex-direction: row;
+
+	&__icon {
+		height: 60px;
+		width: 60px;
+		padding: 4px;
+
+		&__items {
+			position: absolute;
+			right: 35px;
+			top: 50px;
+			height: 30px;
+			width: 30px;
+			background-color: black;
+			opacity: 80%;
+			color: white;
+			font-size: 15px;
+			font-weight: 700;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}

@@ -5,22 +5,32 @@ import PictureOfDay from "@/components/Pictures/PictureOfDay";
 import Pictures from "@/components/Pictures/Pictures";
 import { fetchAPI, Filter } from "@/utils/fetchAPI";
 import { API_URL } from "@/config/index";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Home.module.scss";
+import Pagination from "@/components/Filters/Pagination";
 
 export default function HomePage({ pictures, featuredArtwork }) {
 	return (
 		<Layout title='Home page | PictureApp'>
-			<main className={styles.main}>
-				{pictures && pictures.length === 0 ? (
-					<h3>No pictures at all</h3>
-				) : (
-					<>
-						<PictureOfDay featuredArtwork={featuredArtwork} />
-						<Pictures pictures={pictures} />
-					</>
-				)}
-				<Filters />
-				<Sort />
+			<main className={styles.pictures}>
+				<div className={styles.pictures__ofday}>
+					<PictureOfDay featuredArtwork={featuredArtwork} />
+				</div>
+				<div className={styles.pictures__all}>
+					<div className={styles.pictures__filters}>
+						<Filters />
+					</div>
+					<div className={styles.pictures__main}>
+						<div className={styles.pictures__sort}>
+							<Sort />
+						</div>
+						<div className={styles.pictures__6pack}>
+							<Pictures pictures={pictures} />
+							<div className={styles.pictures__pagination}>
+								<Pagination />
+							</div>
+						</div>
+					</div>
+				</div>
 			</main>
 		</Layout>
 	);
