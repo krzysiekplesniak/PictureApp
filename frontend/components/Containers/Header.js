@@ -10,11 +10,11 @@ const Header = () => {
 				<Link href='https://bejamas.io'>
 					<a>
 						<img src='assets/bejamas-logo.png' alt='Bejamas logo' />
-						<span className={styles.globals}>Bejamas logo</span>
+						{/* <span className={styles.globals}>Bejamas logo</span> */}
 					</a>
 				</Link>
 			</div>
-			<nav>
+			<nav className={styles.shoping}>
 				<ShopingCart />
 			</nav>
 		</header>

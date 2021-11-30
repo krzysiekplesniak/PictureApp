@@ -1,25 +1,30 @@
 .shoping__cart {
 	height: 70px;
 	width: 150px;
-	position: absolute;
-	right: 37px;
-	top: 37px;
-	border-radius: 1px solid red;
+	border: 2px solid blue;
+	display: flex;
+	flex-direction: row;
 }
 
 .shoping__icon {
-	height: 54px;
-	width: 54px;
-	position: absolute;
-	right: 37px;
-	top: 37px;
+	height: 60px;
+	width: 60px;
 	padding: 4px;
-	border-radius: 1px solid red;
+	border: 1px solid red;
 }
 
 .shoping__items {
 	position: absolute;
-	right: 37px;
-	top: 37px;
-	border-radius: 1px solid red;
+	right: 35px;
+	top: 50px;
+	height: 30px;
+	width: 30px;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+	font-size: 15px;
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
