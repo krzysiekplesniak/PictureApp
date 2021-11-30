@@ -1,8 +1,8 @@
-import Layout from "@/components/Layout"
-import PictureItem from "@/components/PictureItem";  
-import Filters from "@/components/Filters"
-import Sort from "@/components/Sort"
-import ShowPictureDay from "@/components/ShowPictureDay"
+import Layout from "@/components/Containers/Layout"
+import PictureItem from "@/components/Pictures/PictureItem";  
+import Filters from "@/components/Filters/Filters"
+import Sort from "@/components/Filters/Sort"
+import ShowPictureDay from "@/components/Containers/FeaturedArtwork"
 import { fetchAPI, Filter } from "@/utils/fetchAPI"
 import { API_URL } from "@/config/index"
 

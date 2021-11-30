@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout"
+import Layout from "@/components/Containers/Layout"
 import Link from "next/link"
 import { API_URL } from "@/config/index"
 

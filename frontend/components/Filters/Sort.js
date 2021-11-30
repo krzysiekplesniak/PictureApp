@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import FiltersContext from '@/context/FiltersContext'
+import FilterItem from './FilterItem'
 
 const Sort = () => {
   
@@ -10,15 +11,9 @@ const Sort = () => {
   }
 
   return (
-    <div>
-        <input
-          type='checkbox'
-          name='sort'
-          id='sort'
-          onChange={sortChange}
-        />
-        <label htmlFor="sort">Sorting {filters.sort ? 'ASC' : 'DESC'}</label> 
-    </div>
+    <>
+       <FilterItem name='sort' filterChange={sortChange} />
+    </>
   )
 }
 

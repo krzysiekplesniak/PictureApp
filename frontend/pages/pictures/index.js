@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Layout from "@/components/Layout"
+import Layout from "@/components/Containers/Layout"
 import { useContext } from 'react'
 import ImagesContext from '@/context/ImagesContext'
 

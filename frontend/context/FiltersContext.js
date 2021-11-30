@@ -20,16 +20,16 @@ export const FiltersProvider = ({ children }) => {
   useEffect(() => {
 
     let query = '?';
-  
-    if (filters.people) {query +="people=true"}; 
-    if (filters.nature) {query ? query +="&nature=true" : query +="nature=true"};
-    if (filters.city) {query ? query +="&city=true" : query +="city=true"}; 
-    if (filters.food) {query ? query +="&food=true" : query +="food=true"}; 
-    if (filters.sort) {query ? query +="&sorting=true" : query +="sorting=true"};
 
-    //console.log('query => ', query);
+    const {people, nature, city, food, sort} = filters;
+
+    if (people) (query +="people=true"); 
+    if (nature) (query ? query +="&nature=true" : query +="nature=true");
+    if (city) (query ? query +="&city=true" : query +="city=true"); 
+    if (food) (query ? query +="&food=true" : query +="food=true"); 
+    if (sort) (query ? query +="&sorting=true" : query +="sorting=true");
          
-    router.push(`${query}`);
+    if (query.length > 1) {router.push(`${query}`)} else {router.push('/')};
 
   }, [filters])
 
@@ -39,7 +39,7 @@ export const FiltersProvider = ({ children }) => {
   }    
     
 
-  const clearAllFilters = (filter) => {
+  const clearAllFilters = () => {
 
     setFilters({
       people: false,
@@ -49,8 +49,6 @@ export const FiltersProvider = ({ children }) => {
       sort: false
     });
     
-    console.log('wyczyszczono wszystkie filtry');
-
   }
  
 

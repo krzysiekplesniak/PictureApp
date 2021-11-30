@@ -1,5 +1,5 @@
 import Link from "next/link"
-import NumberPictures from '@/components/NumberPictures'
+import NumberPictures from '@/components/Pictures/NumberPictures'
 
 export default function Header() {
     

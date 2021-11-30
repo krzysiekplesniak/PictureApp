@@ -2,7 +2,7 @@
 import Head from "next/head" 
 import Header from "./Header"
 import Footer from "./Footer"
-import ShowPictureDay from "./ShowPictureDay"
+import ShowPictureDay from "./FeaturedArtwork"
 import { useRouter } from "next/router"
 
 export default function Layout({title, keyword, description, children}) {
