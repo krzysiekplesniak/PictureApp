@@ -45,26 +45,26 @@ export default function HomePage({ pictures , featuredArtwork }) {
 
 
 
-export async function getServerSideProps({query : {people, nature, city, food}}) {
+export async function getServerSideProps({query : {people, nature, city, food, sort}}) {
    
-    let queryString = `?_limit=6`;
-    let query2 = '';
-  
-    if (people) {query2 +="people=true"}; 
-    if (nature) {query2 ? query2 +="&nature=true" : query2 +="nature=true"};
-    if (city) {query2 ? query2 +="&city=true" : query2 +="city=true"}; 
-    if (food) {query2 ? query2 +="&food=true" : query2 +="food=true"}; 
+    let queryString = '_limit=6';
+    let filters = '';
+          
+    if (people) {filters +="people=true"}; 
+    if (nature) {filters ? filters +="&nature=true" : filters +="nature=true"};
+    if (city) {filters ? filters +="&city=true" : filters +="city=true"}; 
+    if (food) {filters ? filters +="&food=true" : filters +="food=true"}; 
+                
+    if (filters) queryString += `&${filters}`;
+    
+    //if (sort) {queryString +="&_sort=date:ASC"} else {queryString +="&_sort=date:DESC"}; 
         
-    if (query2) {
-        console.log('111', `${queryString}&${query2}`); 
-        queryString += `&${query2}`;
-    } else {
-        console.log('222', `${queryString}`);
-    }
+    console.log(queryString)
 
    const [picturesFiletred, picturesdfeaturedArtwork] = await Promise.all([
-      fetchAPI(`${API_URL}/pictures${queryString}`),
-      fetchAPI(`${API_URL}/pictures?featuredartwork=true`),
+      
+      fetchAPI(`${API_URL}/pictures?${queryString}`),
+      fetchAPI(`${API_URL}/pictures?featuredartwork=true`)
    ]);
 
   

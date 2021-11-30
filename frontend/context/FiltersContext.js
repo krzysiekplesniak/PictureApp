@@ -12,22 +12,11 @@ export const FiltersProvider = ({ children }) => {
     people: false,
     nature: false,
     city: false,
-    food: false
+    food: false,
+    sort: false
   });
    
-  const [sorting, setSorting] = useState('ASC');
-
-
-  const changeSorting = () => {
-    
-    if (sorting ==='ASC') 
-      setSorting('DESC')
-    else
-      setSorting('ASC');
-
-    console.log(sorting);  
-  }
-
+  
   const changeFilters = (filter) => {
 
     // const [setSome, setSomeState] = useState({thing: 'loding', count: 1});
@@ -39,16 +28,16 @@ export const FiltersProvider = ({ children }) => {
       
     let query = '';
   
-    if (filters.people === true) {query +="people=true"}; 
-    if (filters.nature === true) {query ? query +="&nature=true" : query +="nature=true"};
-    if (filters.city === true) {query ? query +="&city=true" : query +="city=true"}; 
-    if (filters.food === true) {query ? query +="&food=true" : query +="food=true"}; 
-    if (sorting === 'DESC') {query +="&sort=updated_at:DESC"} else {query +="&sort=updated_at:ASC"};
-    
-    // console.log('filtr => ', filters);
-    // console.log('query => ', query);
+    if (filters.people) {query +="people=true"}; 
+    if (filters.nature) {query ? query +="&nature=true" : query +="nature=true"};
+    if (filters.city) {query ? query +="&city=true" : query +="city=true"}; 
+    if (filters.food) {query ? query +="&food=true" : query +="food=true"}; 
+    //if (filters.sort) {query +="&sort=ASC"} else {query +="&sort=DESC"};
+        
+  
+    //console.log('query => ', query);
          
-    router.push(`?${query}`)
+    router.push(`?${query}`);
 
   }
 
@@ -58,7 +47,8 @@ export const FiltersProvider = ({ children }) => {
       people: false,
       nature: false,
       city: false,
-      food: false
+      food: false, 
+      sort: false
     });
     
     console.log('wyczyszczono wszystkie filtry');
@@ -66,11 +56,11 @@ export const FiltersProvider = ({ children }) => {
   }
  
 
-  return (
-    <FiltersContext.Provider value={{ filters, changeFilters, clearAllFilters, sorting, changeSorting}}>
-      {children}
-    </FiltersContext.Provider>
-  )
+    return (
+      <FiltersContext.Provider value={{ filters, changeFilters, clearAllFilters}}>
+        {children}
+      </FiltersContext.Provider>
+    )
 }
 
 export default FiltersContext;
