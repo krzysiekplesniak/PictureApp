@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useContext } from 'react'
 import FiltersContext from '@/context/FiltersContext'
 
@@ -21,9 +20,9 @@ export default function Filters() {
         <div>
           <input
             type='checkbox'
-            value={filters.people}
-            onChange={filterChange}
             name='people'
+            id='people'
+            onChange={filterChange}
           />
           <label htmlFor="people">People</label> 
         </div> 
@@ -31,9 +30,9 @@ export default function Filters() {
         <div>
           <input
             type='checkbox'
-            value={filters.nature}
-            onChange={filterChange}
             name='nature'
+            id='nature'
+            onChange={filterChange}
           />
           <label htmlFor="nature">Nature</label> 
         </div>
@@ -41,9 +40,9 @@ export default function Filters() {
         <div>
           <input
             type='checkbox'
-            value={filters.city}
-            onChange={filterChange}
             name='city'
+            id='city'
+            onChange={filterChange}
           />
           <label htmlFor="city">City</label> 
         </div>
@@ -51,9 +50,9 @@ export default function Filters() {
         <div>
           <input
             type='checkbox'
-            value={filters.food}
-            onChange={filterChange}
             name="food"
+            id="food"
+            onChange={filterChange}
           />
           <label htmlFor="food">Food</label> 
         </div>

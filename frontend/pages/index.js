@@ -59,10 +59,6 @@ export async function getServerSideProps({query : {people, nature, city, food, s
 
     if (sorting) {queryString +="&_sort=date:ASC"} else {queryString +="&_sort=date:DESC"};
     
-    
-       
-    console.log(queryString)  
-    console.log(sorting)
 
    const [picturesFiletred, picturesdfeaturedArtwork] = await Promise.all([
       
