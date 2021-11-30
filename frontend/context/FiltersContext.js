@@ -1,62 +1,58 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect } from "react";
 
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
-const FiltersContext = createContext()
+const FiltersContext = createContext();
 
 export const FiltersProvider = ({ children }) => {
+	const router = useRouter();
 
-  const router = useRouter()
+	const [filters, setFilters] = useState({
+		people: false,
+		nature: false,
+		city: false,
+		food: false,
+		sort: false
+	});
 
-  const [filters, setFilters] = useState({
-    people: false,
-    nature: false,
-    city: false,
-    food: false,
-    sort: false
-  });
-     
+	useEffect(() => {
+		let query = "?";
 
-  useEffect(() => {
+		const { people, nature, city, food, sort } = filters;
 
-    let query = '?';
+		if (people) query += "people=true";
+		if (nature) query ? (query += "&nature=true") : (query += "nature=true");
+		if (city) query ? (query += "&city=true") : (query += "city=true");
+		if (food) query ? (query += "&food=true") : (query += "food=true");
+		if (sort) query ? (query += "&sort=true") : (query += "sort=true");
 
-    const {people, nature, city, food, sort} = filters;
+		if (query.length > 1) {
+			router.push(`${query}`);
+		} else {
+			router.push("/");
+		}
+	}, [filters]);
 
-    if (people) (query +="people=true"); 
-    if (nature) (query ? query +="&nature=true" : query +="nature=true");
-    if (city) (query ? query +="&city=true" : query +="city=true"); 
-    if (food) (query ? query +="&food=true" : query +="food=true"); 
-    if (sort) (query ? query +="&sort=true" : query +="sort=true");
-         
-    if (query.length > 1) {router.push(`${query}`)} else {router.push('/')};
+	const changeFilters = filter => {
+		setFilters({ ...filters, [filter]: !filters[filter] });
+	};
 
-  }, [filters])
+	const clearAllFilters = () => {
+		console.log("filters", filters);
+		setFilters({
+			people: false,
+			nature: false,
+			city: false,
+			food: false,
+			sort: false
+		});
+	};
 
-
-  const changeFilters = (filter) => {
-    setFilters(({...filters, [filter]: !filters[filter]}));
-  }    
-    
-
-  const clearAllFilters = () => {
-  console.log('filters',filters);
-    setFilters({
-      people: false,
-      nature: false,
-      city: false,
-      food: false, 
-      sort: false
-    });
-    
-  }
- 
-
-    return (
-      <FiltersContext.Provider value={{ filters, changeFilters, clearAllFilters}}>
-        {children}
-      </FiltersContext.Provider>
-    )
-}
+	return (
+		<FiltersContext.Provider value={{ filters, changeFilters, clearAllFilters }}>
+			{children}
+		</FiltersContext.Provider>
+	);
+};
 
 export default FiltersContext;
