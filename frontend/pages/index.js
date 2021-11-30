@@ -5,6 +5,7 @@ import Sort from "@/components/Filters/Sort"
 import FeaturedArtwork from "@/components/Containers/FeaturedArtwork"
 import { fetchAPI, Filter } from "@/utils/fetchAPI"
 import { API_URL } from "@/config/index"
+import styles from "@/styles/Home.module.css"
 
 
 export default function HomePage({ pictures , featuredArtwork }) {
@@ -24,7 +25,7 @@ export default function HomePage({ pictures , featuredArtwork }) {
       {
         pictures && pictures.length === 0
           ? <h3>No pictures at all</h3>
-          : <main>
+          : <main className={styles.main}>
               <FeaturedArtwork featuredArtwork={featuredArtwork}/>
 
               TODO: wydzielić do osobnego komponnetu

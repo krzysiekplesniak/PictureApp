@@ -1,5 +1,6 @@
 import Link from "next/link"
 import NumberPictures from '@/components/Pictures/NumberPictures'
+import styles from "@/styles/Header.module.css"
 
 const Header = () => {
     
