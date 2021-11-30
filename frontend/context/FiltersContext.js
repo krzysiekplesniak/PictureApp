@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 
 import { useRouter } from 'next/router'
 
@@ -15,31 +15,29 @@ export const FiltersProvider = ({ children }) => {
     food: false,
     sort: false
   });
-   
-  
-  const changeFilters = (filter) => {
+     
 
-    // const [setSome, setSomeState] = useState({thing: 'loding', count: 1});
-    // setSomeState(prev => ({...prev, count: prev.count + 1}));
-    //setFilters(prev => ({...prev, [filter]: !prev[filter]}));
-   
+  useEffect(() => {
 
-    setFilters(({...filters, [filter]: !filters[filter]}));
-      
-    let query = '';
+    let query = '?';
   
     if (filters.people) {query +="people=true"}; 
     if (filters.nature) {query ? query +="&nature=true" : query +="nature=true"};
     if (filters.city) {query ? query +="&city=true" : query +="city=true"}; 
     if (filters.food) {query ? query +="&food=true" : query +="food=true"}; 
-    //if (filters.sort) {query +="&sort=ASC"} else {query +="&sort=DESC"};
-        
-  
+    if (filters.sort) {query ? query +="&sorting=true" : query +="sorting=true"};
+
     //console.log('query => ', query);
          
-    router.push(`?${query}`);
+    router.push(`${query}`);
 
-  }
+  }, [filters])
+
+
+  const changeFilters = (filter) => {
+    setFilters(({...filters, [filter]: !filters[filter]}));
+  }    
+    
 
   const clearAllFilters = (filter) => {
 
