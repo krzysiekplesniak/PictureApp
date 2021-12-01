@@ -45,32 +45,22 @@ const Filters = () => {
 				<button className={styles.button} onClick={handleClearFilters}>
 					CLEAR
 				</button>
+				
 				<div className={styles.filters}>
 					<h2 className={styles.heading}>Category</h2>
 
-					{filterItems.map((item, index) =>
-						index < 7 ? (
-							<FilterItem key={index} name={item.name} value={item.value} filterChange={filterChange} />
-						) : null
-					)}
-					{/* <FilterItem name='people' value={people} filterChange={filterChange} />
-					<FilterItem name='nature' value={nature} filterChange={filterChange} />
-					<FilterItem name='city' value={city} filterChange={filterChange} />
-					<FilterItem name='food' value={food} filterChange={filterChange} />
-					<FilterItem name='pets' value={pets} filterChange={filterChange} />
-					<FilterItem name='landmark' value={landmark} filterChange={filterChange} />
-					<FilterItem name='premium' value={premium} filterChange={filterChange} /> */}
+					{filterItems.slice(0, 7).map((item, index) => (
+						<FilterItem key={index} name={item.name} value={item.value} filterChange={filterChange} />
+					))}
 				</div>
 
 				<hr className='hr2' />
 
 				<div className={styles.filters}>
 					<h2 className={styles.heading}>Price range</h2>
-					{filterItems.map((item, index) =>
-						index > 6 ? (
-							<FilterItem key={index} name={item.name} value={item.value} filterChange={filterChange} />
-						) : null
-					)}
+					{filterItems.slice(7, 11).map((item, index) => (
+						<FilterItem key={index} name={item.name} value={item.value} filterChange={filterChange} />
+					))}
 				</div>
 			</form>
 		</section>

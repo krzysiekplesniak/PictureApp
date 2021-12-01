@@ -50,7 +50,7 @@ export default function HomePage({ pictures, fea }) {
 }
 
 export async function getServerSideProps({ query: { people, nature, city, food, sort } }) {
-	let queryString = "?_limit=6";
+	let queryString = "?_limit=10";
 	let filters = "";
 
 	if (people) {
@@ -81,7 +81,7 @@ export async function getServerSideProps({ query: { people, nature, city, food, 
 
 	return {
 		props: {
-			pictures: picturesFiletred,
+			pictures: picturesFiletred.slice(0,6),
 			fea: fea,
 		}
 	};

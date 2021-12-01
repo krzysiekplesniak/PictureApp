@@ -2,6 +2,7 @@ import { useContext } from "react";
 import ImagesContext from "@/context/ImagesContext";
 import ImageTile from "@/components/Pictures/ImageTile";
 import Image from "next/image";
+import upperCase from "@/utils/upperCase";
 import styles from "@/styles/PictureOfDay.module.scss";
 
 export default function PictureOfDay({ fea, pictures }) {
@@ -13,8 +14,8 @@ export default function PictureOfDay({ fea, pictures }) {
 		<section className='container'>
 			<div className={styles.pictureofDay}>
 				<div className={styles.pictureofDay__info}>
-					<h1 className={styles.pictureofDay__h1}>{fea.name}</h1>
-					<button className={styles.pictureofDay__button} onClick={() => addPicture(featuredArtwork.id)}>
+					<h1 className={styles.pictureofDay__h1}>{upperCase(fea.name)}</h1>
+					<button className={styles.pictureofDay__button} onClick={() => addPicture(fea.id)}>
 						ADD TO CART
 					</button>
 				</div>
