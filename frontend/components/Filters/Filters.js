@@ -40,7 +40,7 @@ const Filters = () => {
 	};
 
 	return (
-		<section className='container'>
+		<section>
 			<form>
 				<button className={styles.button} onClick={handleClearFilters}>
 					CLEAR

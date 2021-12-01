@@ -14,7 +14,7 @@ const Sort = () => {
 	};
 
 	return (
-		<section className='container'>
+		<section>
 			<div className={styles.sort}>
 				<SortItem name='sort' value={sort} filterChange={sortChange} />
 			</div>

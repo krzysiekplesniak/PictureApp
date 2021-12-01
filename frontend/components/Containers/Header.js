@@ -4,7 +4,7 @@ import ShopingCart from "@/components/ShopingCart/ShopingCart";
 
 const Header = () => {
 	return (
-		<>
+		<div className='container'>
 			<header className={styles.header}>
 				<div className={styles.logo}>
 					<Link href='https://bejamas.io'>
@@ -18,7 +18,7 @@ const Header = () => {
 					<ShopingCart />
 				</nav>
 			</header>
-		</>
+		</div>
 	);
 };
 

@@ -11,7 +11,7 @@ export default function PictureOfDay({ fea, pictures }) {
 	const { addPicture } = useContext(ImagesContext);
 
 	return (
-		<section className='container'>
+		<section>
 			<div className={styles.pictureofDay}>
 				<div className={styles.pictureofDay__info}>
 					<h1 className={styles.pictureofDay__h1}>{upperCase(fea.name)}</h1>
