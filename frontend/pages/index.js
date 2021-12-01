@@ -11,34 +11,37 @@ import Pagination from "@/components/Filters/Pagination";
 export default function HomePage({ pictures, featuredArtwork }) {
 	return (
 		<Layout title='Home page | PictureApp'>
-			<main className={styles.pictures}>
-				<hr className='hr2' />
+			<main className='container'>
+				<div className={styles.pictures}>
+					<hr className='hr2' />
 
-				<div className={styles.pictures__ofday}>
-					<PictureOfDay featuredArtwork={featuredArtwork} />
-				</div>
-
-				<hr className='hr2' />
-
-				<div className={styles.pictures__heading}>
-					<h1 className={styles.pictures___heading__bolded}>Photography /</h1>
-					<h1 className={styles.pictures__heading__disabled}>Premium Photos</h1>
-				</div>
-
-				<div className={styles.pictures__all}>
-					<div className={styles.pictures__filters}>
-						<Filters />
+					<div className={styles.pictures__ofday}>
+						{console.log('featuredArtwork       	', featuredArtwork)}
+						<PictureOfDay featuredArtwork={featuredArtwork} />
 					</div>
 
-					<div className={styles.pictures__main}>
-						<div className={styles.pictures__sort}>
-							<Sort />
+					<hr className='hr2' />
+
+					<div className={styles.pictures__heading}>
+						<h1 className={styles.pictures___heading__bolded}>Photography /</h1>
+						<h1 className={styles.pictures__heading__disabled}>Premium Photos</h1>
+					</div>
+
+					<div className={styles.pictures__all}>
+						<div className={styles.pictures__filters}>
+							<Filters />
 						</div>
-						<div className={styles.pictures__6pack}>
-							<Pictures pictures={pictures} />
-						</div>
-						<div className={styles.pictures__pagination}>
-							<Pagination />
+
+						<div className={styles.pictures__main}>
+							<div className={styles.pictures__sort}>
+								<Sort />
+							</div>
+							<div className={styles.pictures__6pack}>
+								<Pictures pictures={pictures} />
+							</div>
+							<div className={styles.pictures__pagination}>
+								<Pagination />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -72,15 +75,17 @@ export async function getServerSideProps({ query: { people, nature, city, food, 
 		queryString += "&_sort=date:DESC";
 	}
 
-	const [picturesFiletred, picturesdfeaturedArtwork] = await Promise.all([
+	const [picturesFiletred, picturesfeaturedArtwork] = await Promise.all([
 		fetchAPI(`${API_URL}/pictures${queryString}`),
 		fetchAPI(`${API_URL}/pictures?featuredartwork=true`)
 	]);
 
+	console.log("featuredArtwork       	", featuredArtwork);
+	
 	return {
 		props: {
 			pictures: picturesFiletred,
-			featuredArtwork: picturesdfeaturedArtwork
+			featuredArtwork: picturesfeaturedArtwork
 		}
 	};
 }

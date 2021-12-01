@@ -10,25 +10,50 @@ export default function PictureOfDay({ featuredArtwork }) {
 
 	return (
 		<section className='container'>
-			<h1>Picture of the day</h1>
-			<div>
-				<p>{featuredArtwork.name}</p>
-				<p>{featuredArtwork.description}</p>
+			<div className={styles.pictureofDay}>
+				<div className={styles.pictureofDay__info}>
+					<h1 className={styles.pictureofDay__h1}>{featuredArtwork.name}aasdsdsd</h1>
+					<button className={styles.pictureofDay__button} onClick={() => addPicture(featuredArtwork.id)}>
+						ADD TO CART
+					</button>
+				</div>
 
-				<button onClick={() => addPicture(featuredArtwork.id)}>DODAJ</button>
-
-				<Image
-					src={featuredArtwork.image ? featuredArtwork.image.formats.thumbnail.url : `/images/pexel.jpeg`}
-					alt='Picture featured artwork'
-					layout='responsive'
-					objectFit='cover'
-					width='1300'
-					height='550'
-					priority
-					quality={50}
-				/>
+				<div className={styles.pictureofDay__image}>
+					<Image
+						src={featuredArtwork.image ? featuredArtwork.image.formats.thumbnail.url : `/images/pexel.jpeg`}
+						alt='Picture featured artwork'
+						layout='responsive'
+						objectFit='cover'
+						width='1300'
+						height='550'
+						priority
+						quality={50}
+					/>
+					<div className={styles.pictureofDay__imageText}>Photo of the day</div>
+				</div>
 			</div>
-			
+
+			<div className={styles.description}>
+				<div className={styles.description__titles}>
+					<h2 className={styles.description__about}>About pictures</h2>
+					<h2 className={styles.description__alsobuy}>People also buy</h2>
+				</div>
+
+				<div className={styles.description__info}>
+					<div>
+						<p>
+							{featuredArtwork.description}
+							sdasdsdsd sddddddddddddddddd dddddddddddddddd ddddddddddddddd ddddddddddddddd dddddddddddddd
+							ddddddddddd
+						</p>
+					</div>
+					<div className={styles.description__3pictures}>
+						<div>1111</div>
+						<div>22222</div>
+						<div>33333</div>
+					</div>
+				</div>
+			</div>
 		</section>
 	);
 }

@@ -1,1 +1,81 @@
+.pictureofDay {
+	
+	&__info {
+		height: 50px;
+		width: 100%;
+		margin: 20px 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 
+	&__h1 {
+		font-weight: bold;
+	}
+
+	&__button {
+		width: 250px;
+	}
+
+	&__image {
+		position: relative;
+	}
+
+	&__imageText {
+		position: absolute;
+		bottom: 0px;
+
+		background-color: white;
+		margin: 0;
+		font: inherit;
+		color: black;
+		width: 250px;
+		height: 40px;
+		display: grid;
+		place-content: center;
+		text-transform: uppercase;
+		font-family: Archivo;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 22px;
+		letter-spacing: 0.07em;
+	}
+}
+
+.description {
+	border: 1px solid red;
+	&__titles {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		border: 1px solid red;
+	}
+
+	&__about {
+		border: 1px solid red;
+	}
+
+	&__alsobuy {
+		border: 1px solid red;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		flex: 0 0 60%;
+		border: 1px solid red;
+	}
+
+	&__3pictures {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		flex: 0 0 40%;
+		border: 1px solid red;
+	}
+}
