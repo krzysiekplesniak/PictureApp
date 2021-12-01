@@ -20,11 +20,6 @@ const FilterItem = ({ name, value, filterChange }) => {
 			<label className={styles.item__label} htmlFor={name}>
 				{upperCase(name)}
 			</label>
-
-			{/* <label classNames={styles.formcontrol}>
-				<input className={styles.item__input} type='checkbox' name='checkbox' />
-				Checkbox
-			</label> */}
 		</div>
 	);
 };

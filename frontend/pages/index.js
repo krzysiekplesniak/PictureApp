@@ -12,16 +12,27 @@ export default function HomePage({ pictures, featuredArtwork }) {
 	return (
 		<Layout title='Home page | PictureApp'>
 			<main className={styles.pictures}>
+				<hr className='hr2' />
+
 				<div className={styles.pictures__ofday}>
 					<PictureOfDay featuredArtwork={featuredArtwork} />
 				</div>
+
+				<hr className='hr2' />
+
+				<div className={styles.pictures__heading}>
+					<h1 className={styles.pictures___heading__bolded}>Photography /</h1>
+					<h1 className={styles.pictures__heading__disabled}>Premium Photos</h1>
+				</div>
+				
 				<div className={styles.pictures__all}>
 					<div className={styles.pictures__filters}>
 						<Filters />
 					</div>
+
 					<div className={styles.pictures__main}>
 						<div className={styles.pictures__sort}>
-							<Sort/>
+							<Sort />
 						</div>
 						<div className={styles.pictures__6pack}>
 							<Pictures pictures={pictures} />

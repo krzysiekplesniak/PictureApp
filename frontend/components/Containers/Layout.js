@@ -17,7 +17,7 @@ const Layout = ({ title, keyword, description, children }) => {
 
 			<Header />
 
-			<main className="container">
+			<main className='container'>
 				{/* all content tutaj jest */}
 				{children}
 			</main>

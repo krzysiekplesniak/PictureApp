@@ -18,7 +18,6 @@ const Header = () => {
 					<ShopingCart />
 				</nav>
 			</header>
-			<hr className='hr2' />
 		</>
 	);
 };
