@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import FiltersContext from "@/context/FiltersContext";
-import FilterItem from "./FilterItem";
+import SortItem from "./SortItem";
+import styles from "@/styles/Sort.module.scss";
 
 const Sort = () => {
 	const {
@@ -14,7 +15,9 @@ const Sort = () => {
 
 	return (
 		<section className='container'>
-			<FilterItem name='sort' value={sort} filterChange={sortChange} />
+			<div className={styles.sort}>
+				<SortItem name='sort' value={sort} filterChange={sortChange} />
+			</div>
 		</section>
 	);
 };

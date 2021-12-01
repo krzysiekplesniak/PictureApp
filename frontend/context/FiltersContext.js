@@ -18,13 +18,18 @@ export const FiltersProvider = ({ children }) => {
 	useEffect(() => {
 		let query = "?";
 
-		const { people, nature, city, food, sort } = filters;
+		const { people, nature, city, food, sort, pets, landmark, premium } = filters;
 
 		if (people) query += "people=true";
 		if (nature) query ? (query += "&nature=true") : (query += "nature=true");
 		if (city) query ? (query += "&city=true") : (query += "city=true");
 		if (food) query ? (query += "&food=true") : (query += "food=true");
+		if (pets) query ? (query += "&pets=true") : (query += "pets=true");
+		if (landmark) query ? (query += "&landmark=true") : (query += "landmark=true");
+		if (premium) query ? (query += "&premium=true") : (query += "premium=true");
+
 		if (sort) query ? (query += "&sort=true") : (query += "sort=true");
+
 
 		if (query.length > 1) {
 			router.push(`${query}`);
@@ -44,6 +49,9 @@ export const FiltersProvider = ({ children }) => {
 			nature: false,
 			city: false,
 			food: false,
+			pets: false,
+			landmark: false,
+			premium: false,
 			sort: false
 		});
 	};

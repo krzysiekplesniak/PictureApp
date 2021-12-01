@@ -21,7 +21,7 @@ export default function HomePage({ pictures, featuredArtwork }) {
 					</div>
 					<div className={styles.pictures__main}>
 						<div className={styles.pictures__sort}>
-							<Sort />
+							<Sort/>
 						</div>
 						<div className={styles.pictures__6pack}>
 							<Pictures pictures={pictures} />

@@ -1,21 +1,31 @@
 import Image from "next/image";
 import { useContext } from "react";
 import ImagesContext from "@/context/ImagesContext";
+import findType from "@/utils/findType";
+import upperCase from "@/utils/upperCase";
+import styles from "@/styles/PictureItem.module.scss";
 
 const PictureItem = ({ picture }) => {
 	const { addPicture } = useContext(ImagesContext);
 
 	return (
 		<>
-			<p>{picture.name}</p>
-			<p>{picture.description}</p>
-			<div>
-				<button onClick={() => addPicture(picture.id)}>DODAJ</button>
-				<Image
-					src={picture.image ? picture.image.formats.thumbnail.url : `/images/pexel.jpeg`}
-					width='250'
-					height='200'
-				/>
+			<div className={styles.items}>
+				<div className={styles.picture}>
+					<Image
+						src={picture.image ? picture.image.formats.thumbnail.url : `/images/pexel.jpeg`}
+						alt='Best pictures on market stock arounf the world'
+						width='280'
+						height='390'
+						objectFit='cover'
+					/>
+
+					<button className={styles.button} onClick={() => addPicture(picture.id)}>
+						ADD TO CART
+					</button>
+					<p>{upperCase(findType(picture))}</p>
+					<p>{picture.name}</p>
+				</div>
 			</div>
 		</>
 	);
