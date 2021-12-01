@@ -28,7 +28,7 @@ export default function PictureOfDay({ featuredArtwork }) {
 					quality={50}
 				/>
 			</div>
-			<hr className='hr2' />
+			
 		</section>
 	);
 }

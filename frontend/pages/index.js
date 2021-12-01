@@ -24,7 +24,7 @@ export default function HomePage({ pictures, featuredArtwork }) {
 					<h1 className={styles.pictures___heading__bolded}>Photography /</h1>
 					<h1 className={styles.pictures__heading__disabled}>Premium Photos</h1>
 				</div>
-				
+
 				<div className={styles.pictures__all}>
 					<div className={styles.pictures__filters}>
 						<Filters />

@@ -12,14 +12,15 @@ const ShopingCart = () => {
 				Clear
 			</button>
 
-			{!picturesInStock == 0 || !!picturesInStock ? (
-				<div className={styles.shopingcart__items}>{picturesInStock}</div>
-			) : null}
-
-			<div className={styles.shopingcart__icon}>
-				<a>
-					<img src='assets/shopping-cart.png' alt='Checkout shoping cart' />
-				</a>
+			<div className={styles.shopingcart__checkout}>
+				{!picturesInStock == 0 || !!picturesInStock ? (
+					<span className={styles.shopingcart__items}>{picturesInStock}</span>
+				) : null}
+				<span className={styles.shopingcart__icon}>
+					<a>
+						<img src='assets/shopping-cart.png' alt='Checkout shoping cart' />
+					</a>
+				</span>
 			</div>
 		</div>
 	);

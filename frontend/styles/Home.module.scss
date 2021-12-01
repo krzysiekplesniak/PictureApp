@@ -17,7 +17,7 @@
 		height: 50px;
 		border: 1px solid black;
 		width: 100%;
-		margin-bottom: 30px;
+		margin: 30px 0;
 		display: flex;
 		flex-direction: row;
 
@@ -30,6 +30,7 @@
 		&__disabled {
 			color: #9b9b9b;
 			display: inline;
+			margin-left: 5px;
 		}
 	}
 
