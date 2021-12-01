@@ -11,6 +11,7 @@ const ShopingCart = () => {
 			<button className={styles.shopingcart__button} onClick={deletePicture}>
 				Clear
 			</button>
+
 			{!picturesInStock == 0 || !!picturesInStock ? (
 				<div className={styles.shopingcart__items}>{picturesInStock}</div>
 			) : null}
@@ -18,7 +19,6 @@ const ShopingCart = () => {
 			<div className={styles.shopingcart__icon}>
 				<a>
 					<img src='assets/shopping-cart.png' alt='Checkout shoping cart' />
-					{/* <span className={styles.globals}>Checkout shoping cart</span> */}
 				</a>
 			</div>
 		</div>

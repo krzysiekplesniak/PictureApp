@@ -17,7 +17,11 @@ const PictureItem = ({ picture }) => {
 						alt='Best pictures on market stock arounf the world'
 						width='280'
 						height='390'
+						layout='responsive'
 						objectFit='cover'
+						priority
+						quality={50}
+
 					/>
 
 					<button className={styles.button} onClick={() => addPicture(picture.id)}>

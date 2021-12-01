@@ -20,10 +20,12 @@ export default function PictureOfDay({ featuredArtwork }) {
 				<Image
 					src={featuredArtwork.image ? featuredArtwork.image.formats.thumbnail.url : `/images/pexel.jpeg`}
 					alt='Picture featured artwork'
-					// layout='responsive'
+					layout='responsive'
 					objectFit='cover'
-					width='700'
-					height='300'
+					width='1300'
+					height='550'
+					priority
+					quality={50}
 				/>
 			</div>
 			<hr className='hr2' />

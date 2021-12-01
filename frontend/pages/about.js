@@ -19,12 +19,13 @@ export async function getStaticProps() {
 	const res = await fetch(`${API_URL}/pictures`);
 	const events = await res.json();
 
-	const featuredArtwork = events.find(evt => evt.slug === "medytacja-na-wesolo");
-	//console.log(featuredArtwork.id);
+	// const featuredArtwork = events.find(evt => evt.slug === "medytacja-na-wesolo");
+	// console.log(featuredArtwork);
+	const featuredArtwork = null
 
 	return {
 		props: {
-			//featuredArtwork
+			featuredArtwork
 		}
 	};
 }

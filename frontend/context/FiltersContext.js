@@ -30,8 +30,8 @@ export const FiltersProvider = ({ children }) => {
 
 		if (sort) query ? (query += "&sort=true") : (query += "sort=true");
 
-
 		if (query.length > 1) {
+			
 			router.push(`${query}`);
 		} else {
 			router.push("/");

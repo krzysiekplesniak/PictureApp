@@ -1,7 +1,7 @@
 .pictures {
 	height: 90vh;
 	width: 100%;
-	padding: 4rem;
+	padding: 2rem 4rem;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -21,7 +21,7 @@
 	&__filters {
 		border: 1px solid black;
 		margin-right: 1rem;
-		width: 33%;
+		width: 20%;
 	}
 
 	&__main {
@@ -29,7 +29,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		width: 100%;
+		width: 80%;
 	}
 
 	&__sort {

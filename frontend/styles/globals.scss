@@ -63,6 +63,7 @@ input {
 	transform: translateY(-0.075em);
 	display: grid;
 	place-content: center;
+	cursor: pointer;
 }
 
 input[type="checkbox"]::before {
@@ -97,4 +98,5 @@ button {
 	font-size: 20px;
 	line-height: 22px;
 	letter-spacing: 0.07em;
+	cursor: pointer;
 }

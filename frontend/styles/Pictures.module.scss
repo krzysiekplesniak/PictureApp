@@ -1,9 +1,8 @@
 .pictures {
 	display: flex;
 	flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: space-between;  
     align-items: center;
 	width: 100%;
 	height: 100%;
-	//border: 3px solid red;
 }
