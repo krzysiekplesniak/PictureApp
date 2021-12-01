@@ -8,7 +8,7 @@ import { API_URL } from "@/config/index";
 import styles from "@/styles/Home.module.scss";
 import Pagination from "@/components/Filters/Pagination";
 
-export default function HomePage({ pictures, featuredArtwork }) {
+export default function HomePage({ pictures, fea }) {
 	return (
 		<Layout title='Home page | PictureApp'>
 			<main className='container'>
@@ -16,8 +16,7 @@ export default function HomePage({ pictures, featuredArtwork }) {
 					<hr className='hr2' />
 
 					<div className={styles.pictures__ofday}>
-						{console.log('featuredArtwork       	', featuredArtwork)}
-						<PictureOfDay featuredArtwork={featuredArtwork} />
+						<PictureOfDay fea={fea[0]} pictures={pictures} />
 					</div>
 
 					<hr className='hr2' />
@@ -75,17 +74,15 @@ export async function getServerSideProps({ query: { people, nature, city, food, 
 		queryString += "&_sort=date:DESC";
 	}
 
-	const [picturesFiletred, picturesfeaturedArtwork] = await Promise.all([
+	const [picturesFiletred, fea] = await Promise.all([
 		fetchAPI(`${API_URL}/pictures${queryString}`),
-		fetchAPI(`${API_URL}/pictures?featuredartwork=true`)
+		fetchAPI(`${API_URL}/pictures?featuredartwork=true`),
 	]);
 
-	console.log("featuredArtwork       	", featuredArtwork);
-	
 	return {
 		props: {
 			pictures: picturesFiletred,
-			featuredArtwork: picturesfeaturedArtwork
+			fea: fea,
 		}
 	};
 }

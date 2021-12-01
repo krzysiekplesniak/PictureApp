@@ -1,9 +1,10 @@
-import Image from "next/image";
 import { useContext } from "react";
 import ImagesContext from "@/context/ImagesContext";
+import ImageTile from "@/components/Pictures/ImageTile";
+import Image from "next/image";
 import styles from "@/styles/PictureOfDay.module.scss";
 
-export default function PictureOfDay({ featuredArtwork }) {
+export default function PictureOfDay({ fea, pictures }) {
 	// FIXME: zmienić domyślne wartości z null po użyciu TS
 
 	const { addPicture } = useContext(ImagesContext);
@@ -12,7 +13,7 @@ export default function PictureOfDay({ featuredArtwork }) {
 		<section className='container'>
 			<div className={styles.pictureofDay}>
 				<div className={styles.pictureofDay__info}>
-					<h1 className={styles.pictureofDay__h1}>{featuredArtwork.name}aasdsdsd</h1>
+					<h1 className={styles.pictureofDay__h1}>{fea.name}</h1>
 					<button className={styles.pictureofDay__button} onClick={() => addPicture(featuredArtwork.id)}>
 						ADD TO CART
 					</button>
@@ -20,14 +21,14 @@ export default function PictureOfDay({ featuredArtwork }) {
 
 				<div className={styles.pictureofDay__image}>
 					<Image
-						src={featuredArtwork.image ? featuredArtwork.image.formats.thumbnail.url : `/images/pexel.jpeg`}
+						src={fea.image ? fea.image.url : `/images/pexel.jpeg`}
 						alt='Picture featured artwork'
 						layout='responsive'
 						objectFit='cover'
-						width='1300'
-						height='550'
+						width=' 650'
+						height='275'
 						priority
-						quality={50}
+						quality={100}
 					/>
 					<div className={styles.pictureofDay__imageText}>Photo of the day</div>
 				</div>
@@ -35,22 +36,18 @@ export default function PictureOfDay({ featuredArtwork }) {
 
 			<div className={styles.description}>
 				<div className={styles.description__titles}>
-					<h2 className={styles.description__about}>About pictures</h2>
-					<h2 className={styles.description__alsobuy}>People also buy</h2>
+					<h1 className={styles.description__about}>About pictures</h1>
+					<h1 className={styles.description__alsobuy}>People also buy</h1>
 				</div>
 
 				<div className={styles.description__info}>
 					<div>
-						<p>
-							{featuredArtwork.description}
-							sdasdsdsd sddddddddddddddddd dddddddddddddddd ddddddddddddddd ddddddddddddddd dddddddddddddd
-							ddddddddddd
-						</p>
+						<p className={styles.description__text}>{fea.description}</p>
 					</div>
 					<div className={styles.description__3pictures}>
-						<div>1111</div>
-						<div>22222</div>
-						<div>33333</div>
+						{pictures.slice(0, 3).map(picture => (
+							<ImageTile source={picture.image} width={150} height={200} />
+						))}
 					</div>
 				</div>
 			</div>
