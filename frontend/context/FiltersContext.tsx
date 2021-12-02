@@ -46,7 +46,7 @@ export const FiltersProvider = ({ children }) => {
 	};
 
 	const clearAllFilters = () => {
-		console.log("filters", filters);
+		//console.log("filters", filters);
 		setFilters({
 			people: false,
 			nature: false,
