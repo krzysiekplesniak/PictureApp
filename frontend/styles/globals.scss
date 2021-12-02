@@ -67,6 +67,8 @@ hr {
 	border-top: 4px solid #e4e4e4;
 }
 
+// pomysł na customwy style inputa zaczerpnięty z => https://moderncss.dev/pure-css-custom-checkbox-style/
+
 input {
 	margin-right: 5px;
 	appearance: none;
@@ -129,7 +131,6 @@ label {
 
 @media (max-width: 768px) {
 	.container {
-		
 		padding: 1rem;
 	}
 }

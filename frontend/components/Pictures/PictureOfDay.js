@@ -46,8 +46,8 @@ export default function PictureOfDay({ pictures, picturePhotoDay }) {
 							<h1>People also buy</h1>
 						</div>
 						<div className={styles.description__3pictures}>
-							{pictures.slice(0, 3).map(picture => (
-								<ImageTile source={picture.image} width={150} height={200} />
+							{pictures.slice(0, 3).map((picture, index) => (
+								<ImageTile key={index} source={picture} width={150} height={200} />
 							))}
 						</div>
 					</div>

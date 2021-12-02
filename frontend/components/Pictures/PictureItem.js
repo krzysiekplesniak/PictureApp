@@ -13,15 +13,18 @@ const PictureItem = ({ picture }) => {
 			<div className={styles.items}>
 				<div className={styles.picture}>
 					<Image
-						src={picture.image ? picture.image.formats.thumbnail.url : `/images/pexel.jpeg`}
+						src={
+							picture.image.formats.small
+								? picture.image.formats.small.url
+								: picture.image.formats.thumbnail.url
+						}
 						alt='Best pictures on market stock arounf the world'
 						width='280'
 						height='390'
 						layout='responsive'
 						objectFit='cover'
 						priority
-						quality={50}
-
+						quality={100}
 					/>
 
 					<button className={styles.button} onClick={() => addPicture(picture.id)}>
