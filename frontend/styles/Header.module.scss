@@ -3,6 +3,7 @@
     width: 100%;
 	padding: 2rem;
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 }
@@ -17,12 +18,12 @@
 
 @media (max-width: 768px) {
 	.header {
-		flex-direction: column;
-		height: auto;
+		height: 4vh;
+		
 	}
 
 	.header ul {
-		margin: 20px 0;
+		margin: 10px 0;
 		flex-direction: column;
 		text-align: center;
 	}
@@ -32,6 +33,6 @@
 	}
 
 	.logo {
-		margin: 20px 0;
+		margin: 10px 0;
 	}
 }

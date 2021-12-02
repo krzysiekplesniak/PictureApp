@@ -5,7 +5,7 @@ import Image from "next/image";
 import upperCase from "@/utils/upperCase";
 import styles from "@/styles/PictureOfDay.module.scss";
 
-export default function PictureOfDay({ fea, pictures }) {
+export default function PictureOfDay({ pictures, picturePhotoDay }) {
 	// FIXME: zmienić domyślne wartości z null po użyciu TS
 
 	const { addPicture } = useContext(ImagesContext);
@@ -14,15 +14,15 @@ export default function PictureOfDay({ fea, pictures }) {
 		<section>
 			<div className={styles.pictureofDay}>
 				<div className={styles.pictureofDay__info}>
-					<h1 className={styles.pictureofDay__h1}>{upperCase(fea.name)}</h1>
-					<button className={styles.pictureofDay__button} onClick={() => addPicture(fea.id)}>
+					<h1 className={styles.pictureofDay__h1}>{upperCase(picturePhotoDay.name)}</h1>
+					<button className={styles.pictureofDay__button} onClick={() => addPicture(picturePhotoDay.id)}>
 						ADD TO CART
 					</button>
 				</div>
 
 				<div className={styles.pictureofDay__image}>
 					<Image
-						src={fea.image ? fea.image.url : `/images/pexel.jpeg`}
+						src={picturePhotoDay.image ? picturePhotoDay.image.url : `/images/pexel.jpeg`}
 						alt='Picture featured artwork'
 						layout='responsive'
 						objectFit='cover'
@@ -36,19 +36,20 @@ export default function PictureOfDay({ fea, pictures }) {
 			</div>
 
 			<div className={styles.description}>
-				<div className={styles.description__titles}>
-					<h1 className={styles.description__about}>About pictures</h1>
-					<h1 className={styles.description__alsobuy}>People also buy</h1>
-				</div>
-
 				<div className={styles.description__info}>
-					<div>
-						<p className={styles.description__text}>{fea.description}</p>
+					<div className={styles.description___aside_left}>
+						<h1>About pictures</h1>
+						<p className={styles.description__text}>{picturePhotoDay.description}</p>
 					</div>
-					<div className={styles.description__3pictures}>
-						{pictures.slice(0, 3).map(picture => (
-							<ImageTile source={picture.image} width={150} height={200} />
-						))}
+					<div className={styles.description__aside_right}>
+						<div>
+							<h1>People also buy</h1>
+						</div>
+						<div className={styles.description__3pictures}>
+							{pictures.slice(0, 3).map(picture => (
+								<ImageTile source={picture.image} width={150} height={200} />
+							))}
+						</div>
 					</div>
 				</div>
 			</div>

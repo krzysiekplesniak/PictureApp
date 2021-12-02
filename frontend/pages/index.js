@@ -8,7 +8,7 @@ import { API_URL } from "@/config/index";
 import styles from "@/styles/Home.module.scss";
 import Pagination from "@/components/Filters/Pagination";
 
-export default function HomePage({ pictures, fea }) {
+export default function HomePage({ pictures, picturePhotoDay }) {
 	return (
 		<Layout title='Home page | PictureApp'>
 			<main className='container'>
@@ -16,7 +16,7 @@ export default function HomePage({ pictures, fea }) {
 					<hr className='hr2' />
 
 					<div className={styles.pictures__ofday}>
-						<PictureOfDay fea={fea[0]} pictures={pictures} />
+						<PictureOfDay picturePhotoDay={picturePhotoDay[0]} pictures={pictures} />
 					</div>
 
 					<hr className='hr2' />
@@ -74,15 +74,15 @@ export async function getServerSideProps({ query: { people, nature, city, food, 
 		queryString += "&_sort=date:DESC";
 	}
 
-	const [picturesFiletred, fea] = await Promise.all([
+	const [picturesFiletred, picturePhotoDay] = await Promise.all([
 		fetchAPI(`${API_URL}/pictures${queryString}`),
-		fetchAPI(`${API_URL}/pictures?featuredartwork=true`),
+		fetchAPI(`${API_URL}/pictures?featuredartwork=true`)
 	]);
 
 	return {
 		props: {
-			pictures: picturesFiletred.slice(0,6),
-			fea: fea,
+			pictures: picturesFiletred.slice(0, 6),
+			picturePhotoDay: picturePhotoDay
 		}
 	};
 }

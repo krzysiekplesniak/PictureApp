@@ -80,9 +80,21 @@
 	}
 }
 
-@media (max-width: 600px) {
-	.pictures {
-		width: 100%;
+@media (max-width: 768px) {
+	.pictures__main {
+		//width: 100%;
 		flex-direction: column;
 	}
+
+	.pictures__all {
+		flex-direction: column;
+	}
+	.pictures__sort {
+		display: none;
+	}
+	
 }
+
+
+
+

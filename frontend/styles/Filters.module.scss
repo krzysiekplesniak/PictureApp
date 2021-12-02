@@ -1,18 +1,25 @@
 .filters {
-	margin-top: 45px;
-	margin-left: 45px;
+	&__box {
+		margin-top: 45px;
+		margin-left: 45px;
+	}
+
+	&__button {
+		width: 145px;
+		height: 35px;
+	}
+	&__heading {
+		font-family: Archivo;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 22px;
+		line-height: 24px;
+		margin-bottom: 40px;
+	}
 }
 
-.button {
-	width: 145px;
-	height: 35px;
-}
-
-.heading {
-	font-family: Archivo;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 22px;
-	line-height: 24px;
-	margin-bottom: 40px;
+@media (max-width: 768px) {
+	.filters {
+		display: none;
+	}
 }

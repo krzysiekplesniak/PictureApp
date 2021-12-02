@@ -40,14 +40,14 @@ const Filters = () => {
 	};
 
 	return (
-		<section>
+		<section className={styles.filters}>
 			<form>
 				<button className={styles.button} onClick={handleClearFilters}>
 					CLEAR
 				</button>
-				
-				<div className={styles.filters}>
-					<h2 className={styles.heading}>Category</h2>
+
+				<div className={styles.filters__box}>
+					<h2 className={styles.filters__heading}>Category</h2>
 
 					{filterItems.slice(0, 7).map((item, index) => (
 						<FilterItem key={index} name={item.name} value={item.value} filterChange={filterChange} />
@@ -56,8 +56,8 @@ const Filters = () => {
 
 				<hr className='hr2' />
 
-				<div className={styles.filters}>
-					<h2 className={styles.heading}>Price range</h2>
+				<div className={styles.filters__box}>
+					<h2 className={styles.filters__heading}>Price range</h2>
 					{filterItems.slice(7, 11).map((item, index) => (
 						<FilterItem key={index} name={item.name} value={item.value} filterChange={filterChange} />
 					))}
