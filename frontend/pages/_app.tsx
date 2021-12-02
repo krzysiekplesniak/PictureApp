@@ -1,8 +1,11 @@
-import { ImagesProvider } from "@/context/ImagesContext";
+
+import { AppProps } from "next/app";
+import { ImagesProvider } from "@/context/ImagesContext"
 import { FiltersProvider } from "@/context/FiltersContext";
 import "../styles/globals.scss";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
+
 	return (
 		<ImagesProvider>
 			<FiltersProvider>

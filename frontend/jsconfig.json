@@ -8,7 +8,6 @@
           "@/context*": ["context/*"],
           "@/utils*":   ["utils/*"],
           "@/public/logo*": ["public/logo*"],
-
         }
     },
     "exclude": [

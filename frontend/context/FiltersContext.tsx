@@ -12,7 +12,10 @@ export const FiltersProvider = ({ children }) => {
 		nature: false,
 		city: false,
 		food: false,
-		sort: false
+		sort: false,
+		pets: false,
+		landmark: false,
+		premium: false,
 	});
 
 	useEffect(() => {

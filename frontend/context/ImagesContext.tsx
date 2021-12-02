@@ -1,7 +1,5 @@
 import { createContext, useState } from "react";
 
-import { NEXT_URL } from "@/config/index";
-
 const ImagesContext = createContext();
 
 export const ImagesProvider = ({ children }) => {
